@@ -1,0 +1,12 @@
+footer {
+  height: 30vh;
+  background-color: white;
+  margin-top: 50px;
+  text-align: center;
+}
+footer {
+background-image: url(../img/footer.png);
+background-position: center;
+background-repeat:repeat;
+background-size: contain;
+}
