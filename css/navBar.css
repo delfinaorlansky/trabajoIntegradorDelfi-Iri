@@ -1,9 +1,50 @@
-
+.li-black {
+  color: black;
+}
 .barra-navegacion {
- background-color: #ffffff;
- width: 100%;
- box-shadow: -2px -2px 5px gray, 2px 2px 5px gray;
+  background-color: #ffffff;
+  width: 100%;
+  position: fixed;
+  top:0;
+  left:0;
+  z-index: 10;
+  overflow: hidden;
+  box-shadow: -2px -2px 5px gray, 2px 2px 5px gray;
+}
+.ul-logo , .ul-menu {
+  list-style-type: none;
+}
+.ul-logo {
+  width: 300px;
+  float: left;
+  display: block;
+}
+.ul-menu {
+  padding-top: 10px;
+  float: right;
+  display: flex;
+}
+.li-menu {
+  margin-right: 30px;
+  padding: 10px;
+  font-size: 1em;
+  font-weight: bold;
+}
+.li-menu:hover {
+  border-bottom: #738b7d 2px solid;
+  border-width: medium;
 }
 .barra-navegacion a {
   text-decoration: none;
+}
+.li-logo img {
+  margin-top: 10px;
+  margin-left: 80px;
+}
+
+.barra-navegacion .ul-logo .li-logo img{
+  float: left;
+  width: 23%;
+  top: 20px;
+  border-radius: 15px;
 }
