@@ -12,5 +12,12 @@ body {
   width: 100%;
   height: 100vh;
   z-index: 0;
+}
+.container-series-populares{
 
+}
+.series-populares {
+  position: relative;
+display: flex;
+  flex-wrap: wrap;
 }
