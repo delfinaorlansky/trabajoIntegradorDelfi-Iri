@@ -1,11 +1,11 @@
 footer {
   height: 30vh;
-  background-color: white;
+  background-color: #354447;
   margin-top: 50px;
   text-align: center;
 }
 footer {
-background-image: url(../img/footer.png);
+background-color: #354447;
 background-position: center;
 background-repeat:repeat;
 background-size: contain;

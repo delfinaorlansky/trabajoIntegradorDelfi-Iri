@@ -1,8 +1,8 @@
 .li-black {
-  color: black;
+  color: white;
 }
+
 .barra-navegacion {
-  background-color: #ffffff;
   width: 100%;
   position: fixed;
   top:0;
@@ -11,19 +11,23 @@
   overflow: hidden;
   box-shadow: -2px -2px 5px gray, 2px 2px 5px gray;
 }
+
 .ul-logo , .ul-menu {
   list-style-type: none;
 }
+
 .ul-logo {
   width: 300px;
   float: left;
   display: block;
 }
+
 .ul-menu {
   padding-top: 10px;
   float: right;
   display: flex;
 }
+
 .li-menu {
   margin-right: 30px;
   padding: 10px;
@@ -34,9 +38,11 @@
   border-bottom: #738b7d 2px solid;
   border-width: medium;
 }
+
 .barra-navegacion a {
   text-decoration: none;
 }
+
 .li-logo img {
   margin-top: 10px;
   margin-left: 80px;

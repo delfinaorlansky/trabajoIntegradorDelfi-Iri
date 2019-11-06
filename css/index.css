@@ -6,6 +6,8 @@
   margin: 0;
   padding: 0;
   font-family: Staatliches;
+  background-color: #354447;
+  color: white;
 }
 
 body {
@@ -28,10 +30,13 @@ display: flex;
 }
 .titulo-tipo-series {
 font-size: 3rem;
-background-color:rgba(150,150,150,1);
+
 
 }
 .article-series {
   float: right;
   width: 20%;
+}
+.integrantes-redes {
+
 }
