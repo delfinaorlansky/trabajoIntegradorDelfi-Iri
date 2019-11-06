@@ -28,4 +28,3 @@ fetch("https://api.themoviedb.org/3/tv/top_rated?api_key="+api_key+"&language=en
 .catch(function(error) {
  console.log("Error: " + error);
 })
-//
