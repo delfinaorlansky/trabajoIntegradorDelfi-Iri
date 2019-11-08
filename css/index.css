@@ -17,6 +17,8 @@ body {
   font-family: 'Staatliches', cursive !important;
   background-color: #354447;
   color: white;
+  width: 100vw;
+  overflow-x: hidden;
 }
 .series{
   width: 100%;
