@@ -10,6 +10,7 @@
   z-index: 10;
   overflow: hidden;
   box-shadow: -2px -2px 5px gray, 2px 2px 5px gray;
+  background: linear-gradient(rgba(53, 68, 71, 0.8), rgba(53, 68, 71, 1)); 
 }
 
 .ul-logo , .ul-menu {
