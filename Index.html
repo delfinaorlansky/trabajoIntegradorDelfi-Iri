@@ -3,8 +3,9 @@
   <head>
     <meta charset="utf-8">
     <title>trabajo integrador</title>
-    <link rel="stylesheet" href="css/navBar.css">
+    <link rel="stylesheet" href="uikit/css/uikit.css">
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/navBar.css">
     <link rel="stylesheet" href="css/footer.css">
   </head>
   <body>
@@ -30,7 +31,52 @@
 
 <br><br><br><br><br><br><br><br>
 
+<!-- SLIDER DE TRAILERS -->
+<div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slider="clsActivated: uk-transition-active; center: true">
 
+    <ul class="uk-slider-items uk-grid">
+        <li class="uk-width-3-4">
+            <div class="uk-panel">
+                <video src="vid/trailerArrow.mp4" alt="">
+                <div class="uk-overlay uk-overlay-primary uk-position-bottom uk-text-center uk-transition-slide-bottom">
+                    <h3 class="uk-margin-remove">Arrow</h3>
+                    <p class="uk-margin-remove">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+            </div>
+        </li>
+        <li class="uk-width-3-4">
+            <div class="uk-panel">
+                <video src="vid/trailerFlash.mp4" alt="">
+                <div class="uk-overlay uk-overlay-primary uk-position-bottom uk-text-center uk-transition-slide-bottom">
+                    <h3 class="uk-margin-remove">The Flash</h3>
+                    <p class="uk-margin-remove">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+            </div>
+        </li>
+        <li class="uk-width-3-4">
+            <div class="uk-panel">
+                <video src="vid/trailerSupernatural.mp4" alt="">
+                <div class="uk-overlay uk-overlay-primary uk-position-bottom uk-text-center uk-transition-slide-bottom">
+                    <h3 class="uk-margin-remove">Supernatural</h3>
+                    <p class="uk-margin-remove">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+            </div>
+        </li>
+        <li class="uk-width-3-4">
+            <div class="uk-panel">
+                <video src="vid/trailerHisDarkMaterials.mp4" alt="">
+                <div class="uk-overlay uk-overlay-primary uk-position-bottom uk-text-center uk-transition-slide-bottom">
+                    <h3 class="uk-margin-remove">His Dark Materials</h3>
+                    <p class="uk-margin-remove">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+            </div>
+    </ul>
+
+    <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
+    <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slider-item="next"></a>
+
+</div>
+<!-- FIN SLIDER DE TRAILERS -->
 
 
 <br> <br> <br><br>
@@ -112,7 +158,7 @@
     </li>
 </footer>
 
-
+  <script type="text/javascript" src='uikit/js/uikit.js'></script>
   <script type="text/javascript" src='js/index.js'></script>
   <script src="">
 
