@@ -33,9 +33,20 @@ font-size: 3rem;
 
 
 }
+.container-series {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.container-series  h2 {
+  width: 100%;
+}
 .article-series {
-  float: left;
+  /* float: left; */
   width: 20%;
+}
+.article-series  img {
+  width: 100%;
 }
 .integrantes-redes {
 
