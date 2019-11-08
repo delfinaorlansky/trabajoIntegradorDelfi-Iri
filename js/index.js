@@ -1,11 +1,13 @@
 window.addEventListener('load',function(){
   //
 var api_key = "60be6317b0012697cb25d6ce427de920"
+// FECTH pedido asincronico a una URL.
 fetch("https://api.themoviedb.org/3/tv/top_rated?api_key="+api_key+"&language=en-US&page=1")
 .then(function(response) {
- return response.json()
+ return response.json() // el servidor me responde con un string en formato JSON, gracias a eso lo transformo en un objeto literal.
 })
 .then(function(information) {
+  console.log(information);
   var url = "https://image.tmdb.org/t/p/original"
   var titulo = ""
   var poster = ""
