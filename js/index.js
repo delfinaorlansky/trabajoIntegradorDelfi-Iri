@@ -96,3 +96,4 @@ window.addEventListener('load',function(){
         });
 
 });
+var contenedorSeriesMayorPuntaje = document.querySelector('mayorPuntaje')
