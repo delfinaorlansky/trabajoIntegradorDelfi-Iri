@@ -1,12 +1,58 @@
-footer {
-  height: 30vh;
+main-footer {
+  width: 100%;
+  height: 30vh; //yo pondria auto//
   background-color: #354447;
   margin-top: 50px;
+  padding: 20px 0px;
   text-align: center;
 }
-footer {
+
+main-footer {
 background-color: #354447;
 background-position: center;
 background-repeat:repeat;
 background-size: contain;
+}
+
+.columnas-container{
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.columnas-container div{
+  width: 32%;
+  text-align: center;
+  color: white; //agregar color correcto//
+}
+
+.columnas-container div ul{
+  margin: 0px;
+  padding: 0px;
+  text-align: center;
+}
+
+.columnas-container div ul li{
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  margin: 0px 10px;
+  border-radius: 100%;
+  background-color: grey;
+}
+
+.columnas-container div ul li a{
+  color: #333;
+  font-size: 25px;
+  line-height: 50px;
+}
+
+.quienes-somos p{
+  color: #333;
+}
+
+.columnas-container div h3:hover{
+  font-size: 25px;
+  color:white;
 }
