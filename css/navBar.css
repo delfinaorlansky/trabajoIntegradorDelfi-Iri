@@ -24,12 +24,13 @@
 }
 
 .ul-menu {
-  padding-top: 10px;
+
   float: right;
   display: flex;
 }
 
 .li-menu {
+margin-top: 10px;
   margin-right: 30px;
   padding: 10px;
   font-size: 1em;
@@ -45,7 +46,7 @@
 }
 
 .li-logo img {
-  margin-top: 10px;
+  margin-top: 20px;
   margin-left: 50px;
   width: 100px;
   height: 40px;
@@ -56,4 +57,7 @@
   width: 23%;
   top: 20px;
   border-radius: 15px;
+}
+.uk-search {
+margin-top: 20px;
 }
