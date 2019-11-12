@@ -48,11 +48,11 @@ background-size: contain;
   line-height: 50px;
 }
 
-.quienes-somos p{
+.quienes-somos p , h3{
   color: white;
 }
 
 .columnas-container div h3:hover{
   font-size: 25px;
-  color:white;
+
 }
