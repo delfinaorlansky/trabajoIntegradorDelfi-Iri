@@ -43,13 +43,13 @@ background-size: contain;
 }
 
 .columnas-container div ul li a{
-  color: #333;
+  color: white;
   font-size: 25px;
   line-height: 50px;
 }
 
 .quienes-somos p{
-  color: #333;
+  color: white;
 }
 
 .columnas-container div h3:hover{
