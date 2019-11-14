@@ -1,4 +1,4 @@
-//window.addEventListener('load',function(){
+window.addEventListener('load',function(){
   //
   //var api_key = "60be6317b0012697cb25d6ce427de920"
   // FECTH pedido asincronico a una URL.
@@ -28,3 +28,19 @@
   //  .catch(function(errores) {
   //      console.log("Error: " + errores);
   //  });
+  var queryStringObj=new URlSearchParams(location.search);
+  var busqueda = queryStringObj.get('buscador');
+   console.log(buscador);
+  fetch('https://api.themoviedb.org/3/search/tv?api_key=ea80e737250396f3fbaef5f707b13894&query=query
+'+busqueda)
+.then(function(response){
+  return response.json();
+})
+.then(function(objetoLiteral){
+  console.log(objetoLiteral);
+})
+
+
+
+
+}
