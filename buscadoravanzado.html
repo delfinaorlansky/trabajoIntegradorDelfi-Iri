@@ -2,21 +2,45 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>buscador avanzado</title>
   </head>
   <body>
 <!-- COMIENZA BUSCADOR -->
+<form method="get">
+  <div>
+    <label>Elegir Genero: </label>
+    <select name="genre" id="selectGenre">
 
+    </select>
+  </div>
+  <div>
+    <label>Elegir Orden: </label>
+    <select name="order" id="selectOrder">
+      <option value="">Mas votadas - Ascendente</option>
+      <option value="">Mas votadas - Descendente</option>
+      <option value="">Lanzamiento - Ascendente</option>
+      <option value="">Lanzamiento - Descendente</option>
+      <option value="">Popularidad - Ascendente</option>
+      <option value="">Popularidad - Descendente</option>
+    </select>
+  </div>
 
-
-
-
+  <div>
+    <label>Año Lanzamiento:</label>
+    <input type="text" name="date_release" id="inputYear">
+  </div>
+</form>
+<br><br><br><br><br><br><br><br>
 
 
   </body>
+
+
+
+
+
     <script type="text/javascript" src='uikit/js/uikit.js'></script>
 <script type="text/javascript"src="js/buscadoravanzado.js">
 
 </script>
-
 </html>
