@@ -14,7 +14,7 @@ window.addEventListener('load',function(){
       var resultados = objetoLiteral.results;
 
       // 4. Capturo el UL donde quiero meter todos los resultados
-      var listaResultados = document.querySelector('#resultados');
+      var listaResultados = document.querySelector('#buscador');
 
       // 5. Iteramos el array de resultados y creamos una variable donde vamos a generar el html
       var contenidoFinal = '';

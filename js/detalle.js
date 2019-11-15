@@ -11,36 +11,33 @@ window.addEventListener('load',function(){
     .then(function(response){
       return response.json();
     })
-   .then(function(objetoLiteral){
-    console.log(objetoLiteral);
-      // 3. Guardo el array de resultados en una variable
-       var resultados = objetoLiteral.results;
+   .then(function(objetoLiteralSerie){
+    console.log(objetoLiteralSerie);
 
       // 4. Capturo el UL donde quiero meter todos los resultados
-       var listaResultados = document.querySelector('#resultados');
-var unResultado = ""
+       var listaResultados = document.querySelector('#detalle');
       // 5. Iteramos el array de resultados y creamos una variable donde vamos a generar el html
       var contenidoFinal = '';
 
-     for (var unResultado of resultados) {
         // 6. Hacemos un IF para consultar si el resultado tiene imagen. Si es asi generamos el contenido
-        if (unResultado.poster_path != null) {
+
           // 7. Generamos un <li> y una <img> por cada serie encontrada
        contenidoFinal += '<li>';
-          contenidoFinal += '<img src="https://image.tmdb.org/t/p/original/' + unResultado.poster_path + '" alt="la imagen">';
-          contenidoFinal += '<p>' + unResultado.name + '</p>';
-         contenidoFinal += '<p>' + unResultado.overview + '</p>';
-           contenidoFinal += '<p>'+ unResultado.original_language + '</p>';
-           contenidoFinal += '<p>'+ unResultado.fisrt_air_date + '</p>';
-         contenidoFinal += '<p>'+ unResultado.geners + '</p>';
-          contenidoFinal += '<a href="detalle.html?id='+ unResultado.id +'">VER MAS</a>';
-           contenidoFinal += '</li>';
+       if (objetoLiteralSerie.poster_path != null) {
+         contenidoFinal +=    '<img src="https://image.tmdb.org/t/p/original/' + objetoLiteralSerie.poster_path + '" alt="la imagen">';
+       }
+       contenidoFinal +=    '<p>' + objetoLiteralSerie.name + '</p>';
+       contenidoFinal +=    '<p>' + objetoLiteralSerie.overview + '</p>';
+       contenidoFinal +=    '<p>'+ objetoLiteralSerie.original_language + '</p>';
+       contenidoFinal +=    '<p>'+ objetoLiteralSerie.fisrt_air_date + '</p>';
+       contenidoFinal +=    '<p>'+ objetoLiteralSerie.geners + '</p>';
+       contenidoFinal += '</li>';
 
 
 
       // 8. Insertamos el contenido final en el HTML del buscador
       listaResultados.innerHTML = contenidoFinal;
-    }
-}
+
+
 })
 })
