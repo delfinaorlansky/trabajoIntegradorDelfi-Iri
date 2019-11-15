@@ -43,14 +43,16 @@ window.addEventListener('load',function(){
         var contenidoSlider = '';
 
         for (var i = 0; i < 10; i++) {
-          poster = url + datos.results[i].poster_path
-          contenidoSlider += `
-            <li>
-                <img src="${poster}" alt="">
-            </li>
-          `;
+        titulo = arrayDeSeries[i].name
+        url_image = "https://image.tmdb.org/t/p/original/" + arrayDeSeries[i].poster_path
+        serie = `<li><a href="detalle.html?idDeSerie=${arrayDeSeries[i].id}">`
+        serie += `img src='${url_imge}' alt= " ">`
+        serie += `div class="uk-position-center uk-panel"><h2>${titulo}</h2></div>`
+        serie += `</li></a>`
+        console.log(serie);
+          contenedorSeriesMasPopulares.innerHTML += serie
   }
-        contenedorSeriesMasPopulares.innerHTML = contenidoSlider
+      //  contenedorSeriesMasPopulares.innerHTML = contenidoSlider
       })
       .catch(function(errores) {
           console.log("Error: " + errores);
