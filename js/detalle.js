@@ -3,7 +3,7 @@ window.addEventListener('load',function(){
   var queryStringObj = new URLSearchParams(window.location.search);
 
   // 2. Guardo la palabra de busqueda para pasarla luego a la URL del FETCH
-  var idSerie = queryStringObj.get('id');
+  var idSerie = queryStringObj.get('idDeSerie');
 
   console.log(idSerie);
 
@@ -22,21 +22,24 @@ window.addEventListener('load',function(){
         // 6. Hacemos un IF para consultar si el resultado tiene imagen. Si es asi generamos el contenido
 
           // 7. Generamos un <li> y una <img> por cada serie encontrada
-       contenidoFinal += '<li>';
+       contenidoFinal += '<div class="detalle-contenedor">'; // con detalle-contenedor esa clase armo el css
        if (objetoLiteralSerie.poster_path != null) {
-         contenidoFinal +=    '<img src="https://image.tmdb.org/t/p/original/' + objetoLiteralSerie.poster_path + '" alt="la imagen">';
+       contenidoFinal +=    '<img src="https://image.tmdb.org/t/p/original/' + objetoLiteralSerie.poster_path + '" alt="la imagen">';
        }
        contenidoFinal +=    '<p>' + objetoLiteralSerie.name + '</p>';
        contenidoFinal +=    '<p>' + objetoLiteralSerie.overview + '</p>';
        contenidoFinal +=    '<p>'+ objetoLiteralSerie.original_language + '</p>';
-       contenidoFinal +=    '<p>'+ objetoLiteralSerie.fisrt_air_date + '</p>';
-       contenidoFinal +=    '<p>'+ objetoLiteralSerie.geners + '</p>';
-       contenidoFinal += '</li>';
+       contenidoFinal +=    '<p>'+ objetoLiteralSerie.first_air_date + '</p>';
+       for (var i = 0; i < objetoLiteralSerie.genres.length; i++) {
+         contenidoFinal +=    '<p>'+ objetoLiteralSerie.genres[i].name + '</p>';
+       }
+
+       contenidoFinal += '</div>';
 
 
 
       // 8. Insertamos el contenido final en el HTML del buscador
-      listaResultados.innerHTML = contenidoFinal;
+      listaResultados.innerHTML += contenidoFinal;
 
 
 })

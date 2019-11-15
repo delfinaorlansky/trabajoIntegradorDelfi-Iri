@@ -11,22 +11,24 @@ window.addEventListener('load',function(){
       return response.json() // el servidor me responde con un string en formato JSON, gracias a eso lo transformo en un objeto literal.
     })
     .then(function(datos) {
-      var url = "https://image.tmdb.org/t/p/original/"
-      var contenedorSeriesMayorPuntaje = document.querySelector('#mayorPuntaje ul')
-
+      var contenedorSeriesMasPopulares = document.querySelector('#mayorPuntaje ul')
       var contenidoSlider = '';
-
-      for (var i = 0; i < 10; i++) {
-        poster = url + datos.results[i].poster_path
-        contenidoSlider += `
-          <li>
-              <img src="${poster}" alt="">
-          </li>
-        `;
+      var arraySeriesPopulares = datos.results
+      var url_image = ""
+      for (var i = 0; i < arraySeriesPopulares.length; i++) {
+        titulo = arraySeriesPopulares[i].name
+        url_image = "https://image.tmdb.org/t/p/original/" + arraySeriesPopulares[i].poster_path
+        serie = `<li><a href="detalle.html?idDeSerie=${arraySeriesPopulares[i].id}">`
+        serie += `<img src='${url_image}' alt= " ">`
+        //serie += `<div class="uk-position-center uk-panel"><h2>${titulo}</h2></div>` TITULO ARRIBA DEL POSTER
+        serie += `</li></a>`
+        console.log(serie);
+        contenedorSeriesMasPopulares.innerHTML += serie
       }
-
-      contenedorSeriesMayorPuntaje.innerHTML = contenidoSlider
+    //  contenedorSeriesMasPopulares.innerHTML = contenidoSlider
     })
+
+
     .catch(function(errores) {
         console.log("Error: " + errores);
     });
@@ -36,48 +38,49 @@ window.addEventListener('load',function(){
         return response.json() // el servidor me responde con un string en formato JSON, gracias a eso lo transformo en un objeto literal.
       })
       .then(function(datos) {
-
-        var url = "https://image.tmdb.org/t/p/original/"
-
+        // console.log(datos);
         var contenedorSeriesMasPopulares = document.querySelector('#masPopulares ul')
         var contenidoSlider = '';
-
-        for (var i = 0; i < 10; i++) {
-        titulo = arrayDeSeries[i].name
-        url_image = "https://image.tmdb.org/t/p/original/" + arrayDeSeries[i].poster_path
-        serie = `<li><a href="detalle.html?idDeSerie=${arrayDeSeries[i].id}">`
-        serie += `img src='${url_imge}' alt= " ">`
-        serie += `div class="uk-position-center uk-panel"><h2>${titulo}</h2></div>`
-        serie += `</li></a>`
-        console.log(serie);
+        var arraySeriesPopulares = datos.results
+        var url_image = ""
+        for (var i = 0; i < arraySeriesPopulares.length; i++) {
+          titulo = arraySeriesPopulares[i].name
+          url_image = "https://image.tmdb.org/t/p/original/" + arraySeriesPopulares[i].poster_path
+          serie = `<li><a href="detalle.html?idDeSerie=${arraySeriesPopulares[i].id}">`
+          serie += `<img src='${url_image}' alt= " ">`
+          //serie += `<div class="uk-position-center uk-panel"><h2>${titulo}</h2></div>` TITULO ARRIBA DEL POSTER
+          serie += `</li></a>`
+          console.log(serie);
           contenedorSeriesMasPopulares.innerHTML += serie
-  }
+        }
       //  contenedorSeriesMasPopulares.innerHTML = contenidoSlider
       })
-      .catch(function(errores) {
+       .catch(function(errores) {
           console.log("Error: " + errores);
-      });
+       });
 
     fetch(urAlAire)
     .then(function(response){
       return response.json()
         })
-        .then(function(datos) {
-          var url = "https://image.tmdb.org/t/p/original/"
-          var contenedorSeriesAlAire = document.querySelector('#alAire ul')
-          var contenidoSlider = '';
+      .then(function(datos) {
 
-          for (var i = 0; i < 10; i++) {
-            poster = url + datos.results[i].poster_path
-            contenidoSlider += `
-              <li>
-                  <img src="${poster}" alt="">
-              </li>
-            `;
-            }
-            contenedorSeriesAlAire.innerHTML = contenidoSlider
-
-        })
+        var contenedorSeriesMasPopulares = document.querySelector('#alAire ul')
+        var contenidoSlider = '';
+        var arraySeriesPopulares = datos.results
+        var url_image = ""
+        for (var i = 0; i < arraySeriesPopulares.length; i++) {
+          titulo = arraySeriesPopulares[i].name
+          url_image = "https://image.tmdb.org/t/p/original/" + arraySeriesPopulares[i].poster_path
+          serie = `<li><a href="detalle.html?idDeSerie=${arraySeriesPopulares[i].id}">`
+          serie += `<img src='${url_image}' alt= " ">`
+          //serie += `<div class="uk-position-center uk-panel"><h2>${titulo}</h2></div>` TITULO ARRIBA DEL POSTER
+          serie += `</li></a>`
+          console.log(serie);
+          contenedorSeriesMasPopulares.innerHTML += serie
+        }
+      //  contenedorSeriesMasPopulares.innerHTML = contenidoSlider
+      })
         .catch(function(errores) {
             console.log("Error: " + errores);
         });

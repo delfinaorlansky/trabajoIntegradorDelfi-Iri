@@ -57,3 +57,13 @@ font-size: 3rem;
 .integrantes-redes {
 
 }
+
+.detalle-contenedor {
+  width: 80%;
+  border: solid 10px white;
+}
+.detalle-contenedor img {
+width: 100%;
+margin-top: 2.5%;
+
+}

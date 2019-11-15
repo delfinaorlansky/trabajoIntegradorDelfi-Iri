@@ -26,7 +26,7 @@ window.addEventListener('load',function(){
           contenidoFinal += '<li>';
           contenidoFinal += '<img src="https://image.tmdb.org/t/p/original/' + unResultado.poster_path + '" alt="la imagen">';
           contenidoFinal += '<p>' + unResultado.name + '</p>';
-          contenidoFinal += '<a href="detalle.html?id='+ unResultado.id +'">VER MAS</a>';
+          contenidoFinal += '<a href="detalle.html?idDeSerie='+ unResultado.id +'">VER MAS</a>';
           contenidoFinal += '</li>';
         }
       }
