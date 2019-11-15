@@ -2,7 +2,7 @@ window.addEventListener('load',function(){
   //
   var api_key = "60be6317b0012697cb25d6ce427de920"
   // FECTH pedido asincronico a una URL.
-  var urlAccion = "https://api.themoviedb.org/3/discover/tv?api_key="+api_key+"&sort_by=accion.desc&page=1&with_genres=18"
+  var urlAccion = "https://api.themoviedb.org/3/discover/tv?api_key="+api_key+"&sort_by=action.desc&page=1&with_genres=18"
   var urlComedias = "https://api.themoviedb.org/3/discover/tv?api_key="+api_key+"&sort_by=comedia.desc&page=1&with_genres=18"
   var urlDrama = "https://api.themoviedb.org/3/discover/tv?api_key="+api_key+"&sort_by=drama.desc&page=1&with_genres=18"
   var urlRomance = "https://api.themoviedb.org/3/discover/tv?api_key="+api_key+"&sort_by=romance.desc&page=1&with_genres=18"
