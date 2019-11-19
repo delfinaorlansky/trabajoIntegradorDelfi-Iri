@@ -60,7 +60,7 @@ font-size: 3rem;
 
 .detalle-contenedor {
   width: 80%;
-  border: solid 10px white; 
+  border: solid 10px white;
     float: right;
     text-align: center;
     margin: 0 auto;
@@ -71,4 +71,14 @@ font-size: 3rem;
 width: 200px;
 float: left;
 margin-right: 30px;
+}
+
+.container-listaGeneros {
+  margin-left: 150px;
+  margin-top: 95px;
+}
+
+.listaGeneros {
+  text-align: center;
+  text-decoration: none; 
 }
