@@ -3,10 +3,12 @@ window.addEventListener('load',function(){
   var queryStringObj = new URLSearchParams(window.location.search);
 
   // 2. Guardo la palabra de busqueda para pasarla luego a la URL del FETCH
-  var palabraABuscar = queryStringObj.get('buscador');
-  SEND REQUEST
-  https://api.themoviedb.org/3/discover/tv?api_key=ea80e737250396f3fbaef5f707b13894&language=en-US&sort_by=popularity.desc&first_air_date_year=YEAR&page=1&timezone=America%2FNew_York&with_genres=GENEROS&without_genres=GENEROS&include_null_first_air_dates=false
-  fetch('https://api.themoviedb.org/3/search/tv?api_key=ea80e737250396f3fbaef5f707b13894&query=' + palabraABuscar)
+  var generoBuscado = queryStringObj.get('genre');
+  var añoEstreno = queryStringObj.get('date_release')
+  var ordenVotos = queryStringObj.get('order')
+  //SEND REQUEST
+  //https://api.themoviedb.org/3/discover/tv?api_key=ea80e737250396f3fbaef5f707b13894&language=en-US&sort_by=popularity.desc&first_air_date_year=YEAR&page=1&timezone=America%2FNew_York&with_genres=GENEROS&without_genres=GENEROS&include_null_first_air_dates=false
+  fetch('https://api.themoviedb.org/3/discover/tv?api_key=ea80e737250396f3fbaef5f707b13894&language=en-US&sort_by='+ ordenVotos +'&first_air_date_year='+ añoEstreno +'&page=1&timezone=America%2FNew_York&with_genres=' + generoBuscado + '&without_genres=32&include_null_first_air_dates=false')
     .then(function(response){
       return response.json();
     })

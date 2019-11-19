@@ -18,6 +18,10 @@
                     </ol>
                 </ul>
 
+                <form class="uk-search uk-search-default" action="buscador.html" method="GET">
+                    <span uk-search-icon></span>
+                    <input class="uk-search-input" type="search" placeholder="Search..." name="buscador">
+                </form>
                 <ul class="ul-menu">
                   <li class="li-menu"><a class="li-black" href="index.html">Pagina Principal </a></li>
                   <li class="li-menu"><a class="li-black" href="generos.html">Explorar Generos</a></li>
@@ -29,33 +33,10 @@
         </header>
 
         <br><br><br><br><br><br><br>
-        <form method="get" action="resultadosbuscadoravanzado.html">
-          <div>
-            <label>Elegir Genero: </label>
-            <select name="genre" id="selectGenre">
 
-            </select>
-          </div>
-          <div>
-            <label>Elegir Orden: </label>
-            <select name="order" id="selectOrder">
-              <option value="vote_average.asc">Mas votadas - Ascendente</option>
-              <option value="vote_average.desc">Mas votadas - Descendente</option>
-              <option value="first_air_date.asc">Lanzamiento - Ascendente</option>
-              <option value="first_air_date.desc">Lanzamiento - Descendente</option>
-              <option value="popularity.asc">Popularidad - Ascendente</option>
-              <option value="popularity.desc">Popularidad - Descendente</option>
-            </select>
-          </div>
-
-          <div>
-            <label>Año de Estreno:</label>
-            <input type="text" name="date_release" id="inputYear">
-          </div>
-          <button type="submit" name="button">Buscar</button>
-        </form>
-
-
+        <section class="container-series" id="buscador">
+          <h2 class="secciones">Resultados de su busqueda:</h2>
+        </section>
 
         <div class="uk-position-relative uk-visible-toggle uk-light" uk-slider>
           <ul class="uk-slider-items uk-child-width-1-2 uk-child-width-1-6@s uk-child-width-1-6@m" id="resultados">
@@ -94,8 +75,8 @@
 </footer>
 
   <script type="text/javascript" src='uikit/js/uikit.js'></script>
-  <script type="text/javascript" src='buscadoravanzado.js'></script>
-
+  <script type="text/javascript" src='js/buscadoravanzadoresultados.js'></script>
+  <script type="text/javascript" src='js/detalles.js'></script>
   <script src="https://kit.fontawesome.com/e32b1dc814.js"></script>
   </body>
 
