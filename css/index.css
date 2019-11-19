@@ -90,3 +90,22 @@ margin-right: 30px;
 margin-top: 80px;
 
 }
+
+#buscador {
+width: 100%;
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+}
+
+
+#buscador li {
+  width: 20%;
+  list-style: none;
+  text-align: center;
+}
+
+#buscador li img {
+  height: 400px;
+  width: 100%;
+}
