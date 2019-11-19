@@ -35,12 +35,7 @@ window.addEventListener('load',function(){
        }
 
        contenidoFinal += '</div>';
-
-
-
       // 8. Insertamos el contenido final en el HTML del buscador
       listaResultados.innerHTML += contenidoFinal;
-
-
 })
 })

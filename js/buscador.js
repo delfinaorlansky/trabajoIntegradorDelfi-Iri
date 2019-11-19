@@ -23,7 +23,7 @@ window.addEventListener('load',function(){
         // 6. Hacemos un IF para consultar si el resultado tiene imagen. Si es asi generamos el contenido
         if (unResultado.poster_path != null) {
           // 7. Generamos un <li> y una <img> por cada serie encontrada
-          contenidoFinal += '<li>';
+          contenidoFinal += '<li class=detalle-buscador>';
           contenidoFinal += '<img src="https://image.tmdb.org/t/p/original/' + unResultado.poster_path + '" alt="la imagen">';
           contenidoFinal += '<p>' + unResultado.name + '</p>';
           contenidoFinal += '<a href="detalle.html?idDeSerie='+ unResultado.id +'">VER MAS</a>';
