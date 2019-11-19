@@ -52,7 +52,7 @@ window.addEventListener('load',function(){
 
           serie = '<article class="article-series">'
           serie +=   '<img src="'+poster+'" width="100px">'
-          serie +=   '<h2 class="titulo-series">'+titulo+'</h2>'
+        //  serie +=   '<h2 class="titulo-series">'+titulo+'</h2>' //
           serie += '</article>'
 
           console.log(serie);
@@ -77,7 +77,7 @@ window.addEventListener('load',function(){
 
             serie = '<article class="article-series">'
             serie +=   '<img src="'+poster+'" width="100px">'
-            serie +=   '<h2 class="titulo-series">'+titulo+'</h2>'
+            //serie +=   '<h2 class="titulo-series">'+titulo+'</h2>' //
             serie += '</article>'
 
             console.log(serie);
