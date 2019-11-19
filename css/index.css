@@ -72,9 +72,21 @@ width: 200px;
 float: left;
 margin-right: 30px;
 }
+
+
+.container-listaGeneros {
+  margin-left: 150px;
+  margin-top: 95px;
+}
+
+.listaGeneros {
+  text-align: center;
+  text-decoration: none;
+
 .detalle-buscador img {
   width: 200px;
   float: left;
   margin-right: 30px;
 margin-top: 80px;
+
 }

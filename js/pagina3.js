@@ -7,8 +7,8 @@ console.log(idDeGenero);
 console.log(nombreDeGenero);
  var url_seriesPorGenero = "https://api.themoviedb.org/3/discover/tv?api_key=60be6317b0012697cb25d6ce427de920&sort_by=popularity.desc&page=1&with_genres="+idDeGenero
  fetch(url_seriesPorGenero)
- .then(function (respuesta) {
-   return respuesta.json();
+ .then(function (response) {
+   return response.json();
  })
  .then(function (datos) {
    console.log(datos)
