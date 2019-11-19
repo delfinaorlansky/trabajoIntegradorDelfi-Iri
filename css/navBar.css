@@ -60,3 +60,15 @@ margin-top: 10px;
 .uk-search {
 margin-top: 20px;
 }
+
+/* MOBILE */
+@media (max-width: 480px) {
+.ul-logo { width: 200px}
+.li-menu { font-size: 0.4em }
+
+}
+
+/*TABLET*/
+@media (min-width: 480px) and (max-width: 768px) {
+.ul-menu {width: 100%}
+}

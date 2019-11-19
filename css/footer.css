@@ -56,3 +56,16 @@ background-size: contain;
   font-size: 25px;
 
 }
+
+/*mobile*/
+@media (max-width: 480px) {
+.columnas-container div h3{ font-size: 0.7em}
+.columnas-container div {font-size: 0.7em}
+.columnas-container div ul li a{ font-size: 18px}
+.columnas-container div ul li { width: 38px}
+}
+
+/*TABLET*/
+@media (min-width: 480px) and (max-width: 768px) {
+
+}
