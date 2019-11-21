@@ -39,3 +39,8 @@ window.addEventListener('load',function(){
       listaResultados.innerHTML += contenidoFinal;
 })
 })
+
+      document.querySelector ("#recomendaciones").addEventListener("click", function () {
+      fetch("https://api.themoviedb.org/3/movie/" + idSerie + "/recommendations?api_key=d6ff71a6bd2a94eaac5b986a9112d505&page=1")
+      //hacer todo lo del fetch// 
+    })
