@@ -39,11 +39,14 @@ window.addEventListener('load',function(){
       listaResultados.innerHTML += contenidoFinal;
 })
 })
+// RECOMENDACIONES
+var queryStringObj = new URLSearchParams(window.location.search);
+var urlFija = "https://image.tmdb.org/t/p/original/";
+function createItemHtml(clase, titulo, imagen, idSerie) {
 
-      document.querySelector ("#recomendaciones").addEventListener("click", function () {
-      fetch("https://api.themoviedb.org/3/movie/" + idSerie + "/recommendations?api_key=d6ff71a6bd2a94eaac5b986a9112d505&page=1")
-      .then(function(response) {
-        return response.json();
-      })
-
-      })
+  serie = '<li class="'+ clase + '">'
+  serie +=     '<a href="detalles.html?idSerie='+idSerie+'&nombreSerie='+titulo+'" >'
+  serie +=      '<h2>'+ titulo +'</h2>'
+  serie +=      '<img src="'+ imagen +'" alt="">'
+  serie +=    '</a>'
+  serie +=  '</li>';

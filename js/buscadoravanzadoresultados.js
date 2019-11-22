@@ -3,7 +3,7 @@ window.addEventListener('load',function(){
   var queryStringObj = new URLSearchParams(window.location.search);
 
   // 2. Guardo la palabra de busqueda para pasarla luego a la URL del FETCH
-  var generoBuscado = queryStringObj.get('genre');
+  var generoBuscado = queryStringObj.get('genre'); //esta palabra es la que estaba esricto en la url y yo borre//
   var añoEstreno = queryStringObj.get('date_release')
   var ordenVotos = queryStringObj.get('order')
   //SEND REQUEST

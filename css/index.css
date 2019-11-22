@@ -109,3 +109,12 @@ justify-content: space-between;
   height: 400px;
   width: 100%;
 }
+.titulos-home {
+  font-size: 2em;
+  font-family: 'Staatliches', cursive !important;
+  background-color: #354447;
+  color: white;
+  width: 100vw;
+  overflow-x: hidden;
+margin-left: 35%;
+}
