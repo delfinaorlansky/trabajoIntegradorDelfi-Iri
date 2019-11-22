@@ -57,6 +57,16 @@ background-size: contain;
 
 }
 
+.logo-tmdb {
+  height: 60px;
+  width: 4%;
+
+
+}
+
+
+
+
 /*mobile*/
 @media (max-width: 480px) {
 .columnas-container div h3{ font-size: 0.7em}
