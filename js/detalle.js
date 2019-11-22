@@ -54,6 +54,7 @@ function createItemHtml(clase, titulo, imagen, idSerie) {
   return serie;
 }
 
+
 var idSerie = queryStringObj.get('idDeSerie');
 var urlRecomendaciones = "https://api.themoviedb.org/3/tv/"+idSerie+"/recommendations?api_key=81abb78b34be12fc4620b0a001276f5a&language=en-US&page=1"
    fetch(urlRecomendaciones)
@@ -79,8 +80,8 @@ var recoBoton = document.getElementById("recomendacionesBoton")
  sectionReco.style.display = "block";
  console.log(sectionReco.style.display);
  console.log(recoBoton);
-
 }
+
 
     //  document.querySelector ("#recomendaciones").addEventListener("click", function () {
     // fetch("https://api.themoviedb.org/3/movie/" + idSerie + "/recommendations?api_key=d6ff71a6bd2a94eaac5b986a9112d505&page=1")
