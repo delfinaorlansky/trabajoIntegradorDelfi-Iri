@@ -34,28 +34,28 @@ window.addEventListener('load',function(){
          contenidoFinal +=    '<p>'+ objetoLiteralSerie.genres[i].name + '</p>';
        }
 
-
-   fetch("https://api.themoviedb.org/3/tv/" + id + "/videos?api_key=60be6317b0012697cb25d6ce427de920&language=en-US")
-     .then(function(respuesta) {
-       return respuesta.json();
-     })
-     .then(function(datos) {
-       console.log(datos);
-       var div_trailer = document.querySelector(".contenedor-trailers");
-       var trailer = datos.results;
-
-       for (var i = 0; i < trailer.length; i++) {
-         div_trailer.innerHTML += '<iframe width="560" height="315" src="https://www.youtube.com/embed/' + datos.results[i].key + '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
-
-
-       }
-     })
-
-       contenidoFinal += '</div>';
-      // 8. Insertamos el contenido final en el HTML del buscador
-      listaResultados.innerHTML += contenidoFinal;
-})
-})
+//
+//    fetch("https://api.themoviedb.org/3/tv/" + id + "/videos?api_key=60be6317b0012697cb25d6ce427de920&language=en-US")
+//      .then(function(respuesta) {
+//        return respuesta.json();
+//      })
+//      .then(function(datos) {
+//        console.log(datos);
+//        var div_trailer = document.querySelector(".contenedor-trailers");
+//        var trailer = datos.results;
+//
+//        for (var i = 0; i < trailer.length; i++) {
+//          div_trailer.innerHTML += '<iframe width="560" height="315" src="https://www.youtube.com/embed/' + datos.results[i].key + '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+//
+//
+//        }
+//      })
+//
+//        contenidoFinal += '</div>';
+//       // 8. Insertamos el contenido final en el HTML del buscador
+ listaResultados.innerHTML += contenidoFinal;
+// })
+// })
 // RECOMENDACIONES
 var queryStringObj = new URLSearchParams(window.location.search);
 var urlFija = "https://image.tmdb.org/t/p/original/";
@@ -105,3 +105,5 @@ botonRecomendaciones.onclick = function onclick(){
     //  document.querySelector ("#recomendaciones").addEventListener("click", function () {
     // fetch("https://api.themoviedb.org/3/movie/" + idSerie + "/recommendations?api_key=d6ff71a6bd2a94eaac5b986a9112d505&page=1")
     // })
+})
+})
