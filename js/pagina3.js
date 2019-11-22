@@ -6,7 +6,7 @@ console.log(idDeGenero);
 console.log(nombreDeGenero);
  var tit = document.querySelector('.tituloGeneros')
  tit.innerHTML = `${nombreDeGenero}`
-  var url_seriesPorGenero = "https://api.themoviedb.org/3/discover/tv?api_key=b0f40cf877bd4ccb9f9f1975eb5ffa65&sort_by=popularity.desc&page=1&with_genres="+idDeGenero
+  var url_seriesPorGenero = "https://api.themoviedb.org/3/discover/tv?api_key=60be6317b0012697cb25d6ce427de920&sort_by=popularity.desc&page=1&with_genres="+idDeGenero
   fetch(url_seriesPorGenero)
   .then(function (respuesta) {
     return respuesta.json();
@@ -17,15 +17,15 @@ console.log(nombreDeGenero);
       var titulo = ""
       var url_imge = ""
       var serie  =  ""
-      var sxGeneros = document.querySelector('.seriesPorGenero')
+      var listaResultados = document.querySelector('.seriesPorGenero')
       for (var i = 0; i < arrayDeSeriesPorGenero.length; i++) {
         titulo = arrayDeSeriesPorGenero[i].name
         url_imge = "https://image.tmdb.org/t/p/original/" + arrayDeSeriesPorGenero[i].poster_path
-        seriesxg = `<li><a href="detalle.html?idDeSerie=${arrayDeSeriesPorGenero[i].id}">`
-        seriesxg +=      `<img class="poster" src='${url_imge}' alt="">`
-        seriesxg +=      `<div class="uk-position-center uk-panel titulo"><h2>${titulo}</h2></div>`
-        seriesxg +=   `</li></a>`
-        sxGeneros.innerHTML += seriesxg
+        seriesxgenero = `<li><a href="detalle.html?idDeSerie=${arrayDeSeriesPorGenero[i].id}">`
+        seriesxgenero +=      `<img class="poster" src='${url_imge}' alt="">`
+        seriesxgenero +=      `<div class="uk-position-center uk-panel titulo"><h2>${titulo}</h2></div>`
+        seriesxgenero +=   `</li></a>`
+        listaResultados.innerHTML = contenidoFinal;
       }
   })
   .catch(function (error) {
