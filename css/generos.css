@@ -1,0 +1,16 @@
+.listado li {
+  list-style: none;
+}
+
+.listado div.contenedor {
+  text-align: center;
+  padding: 5px;
+}
+
+.listado div.contenedor li a{
+  color: white;
+}
+
+.listado {
+  padding-top: 100px;
+}
