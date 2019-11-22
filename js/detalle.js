@@ -7,7 +7,7 @@ window.addEventListener('load',function(){
 
   console.log(idSerie);
 
-  fetch('https://api.themoviedb.org/3/tv/' + idSerie + '?api_key=ea80e737250396f3fbaef5f707b13894&language=en-US')
+  fetch('https://api.themoviedb.org/3/tv/' + idSerie + '?api_key=60be6317b0012697cb25d6ce427de920&language=en-US')
     .then(function(response){
       return response.json();
     })
@@ -34,11 +34,44 @@ window.addEventListener('load',function(){
          contenidoFinal +=    '<p>'+ objetoLiteralSerie.genres[i].name + '</p>';
        }
 
-       contenidoFinal += '</div>';
-      // 8. Insertamos el contenido final en el HTML del buscador
-      listaResultados.innerHTML += contenidoFinal;
-})
-})
+//
+//    fetch("https://api.themoviedb.org/3/tv/" + id + "/videos?api_key=60be6317b0012697cb25d6ce427de920&language=en-US")
+//      .then(function(respuesta) {
+//        return respuesta.json();
+//      })
+//      .then(function(datos) {
+//        console.log(datos);
+//        var div_trailer = document.querySelector(".contenedor-trailers");
+//        var trailer = datos.results;
+//
+//        for (var i = 0; i < trailer.length; i++) {
+//          div_trailer.innerHTML += '<iframe width="560" height="315" src="https://www.youtube.com/embed/' + datos.results[i].key + '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+//
+//
+//        }
+//      })
+//
+//        contenidoFinal += '</div>';
+//       // 8. Insertamos el contenido final en el HTML del buscador
+ listaResultados.innerHTML += contenidoFinal;
+// })
+// })
+//TRAILER
+// var urlTrailers = "https://api.themoviedb.org/3/tv/"+idSerie+"/videos?api_key=81abb78b34be12fc4620b0a001276f5a&language=en-US"
+//       fetch (urlTrailers)
+//         .then(function(response) {
+//           return response.json();
+//         })
+//         .then(function (resultados) {
+//          console.log(resultados);
+//        var arrayKeys = resultados.results
+//           var trailer = document.querySelector(".contenedor-trailers");
+//         for (var i = 0; i < arrayKeys.length; i++) {
+//             trailer += '<iframe width="560" height="315" src="https://www.youtube.com/embed/'+genero.key+'" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+//           }
+//           document.querySelector(".trailers").innerHTML = trailer;
+//        })
+
 // RECOMENDACIONES
 var queryStringObj = new URLSearchParams(window.location.search);
 var urlFija = "https://image.tmdb.org/t/p/original/";
@@ -50,3 +83,42 @@ function createItemHtml(clase, titulo, imagen, idSerie) {
   serie +=      '<img src="'+ imagen +'" alt="">'
   serie +=    '</a>'
   serie +=  '</li>';
+
+  return serie;
+}
+
+var idSerie = queryStringObj.get('idDeSerie');
+var urlRecomendaciones = "https://api.themoviedb.org/3/tv/"+idSerie+"/recommendations?api_key=81abb78b34be12fc4620b0a001276f5a&language=en-US&page=1"
+   fetch(urlRecomendaciones)
+     .then(function(response) {
+       return response.json();
+     })
+     .then(function(resultados) {
+  //     console.log(resultados);
+       var recoContainer = document.querySelector(".reco");
+         for (var i = 0; i < resultados.results.length; i++) {
+           titulo = resultados.results[i].name
+           img_src = urlFija + resultados.results[i].poster_path
+           var serie = createItemHtml("reco-items", titulo, img_src, resultados.results[i].id) ;
+           recoContainer.innerHTML += serie
+         }
+
+       })
+       listaResultados.innerHTML = contenidoFinal;
+
+var sectionRecomendaciones = document.querySelector(".sectionRecomendaciones")
+
+
+//var botonRecomendaciones = document.getElementById("botonRecomendaciones")
+//botonRecomendaciones.onclick = function onclick(){
+ //sectionRecomendaciones.style.display = "block";
+//  console.log(sectionRecomendaciones.style.display);
+ //console.log(botonRecomendaciones);
+//}
+
+
+    //  document.querySelector ("#recomendaciones").addEventListener("click", function () {
+    // fetch("https://api.themoviedb.org/3/movie/" + idSerie + "/recommendations?api_key=d6ff71a6bd2a94eaac5b986a9112d505&page=1")
+    // })
+})
+})
