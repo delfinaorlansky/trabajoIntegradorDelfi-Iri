@@ -1,35 +1,29 @@
-window.addEventListener ('load', function () {
-  var queryStringObject = new URLSearchParams(window.location.search)
-  var idDeGenero = queryStringObject.get("idDeGenero")
-console.log(idDeGenero);
-  var nombreDeGenero = queryStringObject.get("nombreDeGenero")
-console.log(nombreDeGenero);
- var tit = document.querySelector('.tituloGeneros')
- tit.innerHTML = `${nombreDeGenero}`
-  var url_seriesPorGenero = "https://api.themoviedb.org/3/discover/tv?api_key=60be6317b0012697cb25d6ce427de920&sort_by=popularity.desc&page=1&with_genres="+idDeGenero
-  fetch(url_seriesPorGenero)
-  .then(function (respuesta) {
-    return respuesta.json();
-  })
-  .then(function (informacion) {
-    console.log(informacion)
-      var arrayDeSeriesPorGenero = informacion.results
-      var titulo = ""
-      var url_imge = ""
-      var serie  =  ""
-      var listaResultados = document.querySelector('.seriesPorGenero')
-      for (var i = 0; i < arrayDeSeriesPorGenero.length; i++) {
-        titulo = arrayDeSeriesPorGenero[i].name
-        url_imge = "https://image.tmdb.org/t/p/original/" + arrayDeSeriesPorGenero[i].poster_path
-        seriesxgenero = `<li><a href="detalle.html?idDeSerie=${arrayDeSeriesPorGenero[i].id}">`
-        seriesxgenero +=      `<img class="poster" src='${url_imge}' alt="">`
-        seriesxgenero +=      `<div class="uk-position-center uk-panel titulo"><h2>${titulo}</h2></div>`
-        seriesxgenero +=   `</li></a>`
-        listaResultados.innerHTML = contenidoFinal;
-      }
-  })
-  .catch(function (error) {
-    console.log('Error: ' + error);
-  })
-
+window.onload = function(){
+//////////////////Info de la serie
+var querystring = location.search;
+var query2 = new URLSearchParams(querystring)
+var id = query2.get("idDeGenero")
+var page = 1;
+vermas()
+function vermas() {
+// GENEROSSSSSSS
+var url = "https://api.themoviedb.org/3/discover/tv?api_key=c0e01d0df95b98b689dcb3af16007742&language=en-US&sort_by=popularity.desc&page=2" + page + "&timezone=America%2FNew_York&include_null_first_air_dates=false&with_genres=" + id;
+console.log("hola mundo!");
+fetch(url)
+.then(function(respuesta){
+ return respuesta.json();
 })
+.then(function(datos){
+ console.log(datos);
+  var div = document.querySelector("#listaPorGeneros");
+  //titulo
+  var titulo = document.querySelector("#tituloPorGenero");
+  var name = query2.get("name")
+  titulo.innerHTML = name;
+  for (var i=0; i<datos.results.length; i++){
+    div.innerHTML += '<li><a " href="detalle.html?idDeSerie='+ datos.results[i].id +'"> ' + '<img src="https://image.tmdb.org/t/p/w500/' + datos.results[i].poster_path + '">' + '</a></li>'
+  }
+console.log(datos.results.length);
+  })
+  }
+}
