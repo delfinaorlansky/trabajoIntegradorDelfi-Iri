@@ -76,12 +76,12 @@ var urlTrailers = "https://api.themoviedb.org/3/tv/"+idSerie+"/videos?api_key=81
         .then(function(response) {
           return response.json();
         })
-        .then(function (arrayKeys) {
-          console.log(arrayKeys);
+        .then(function (resultados) {
+          console.log(resultados);
        var arrayKeys = resultados.results
           var trailer = document.querySelector(".contenedor-trailers");
-          for (var i = 0; i < arrayKeys.results.length; i++) {
-            trailer += '<iframe width="560" height="315" src="https://www.youtube.com/embed/'+arrayKeys[i].key+'" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+          for (var i = 0; i < arrayKeys.length; i++) {
+            trailer += '<iframe width="560" height="315" src="https://www.youtube.com/embed/'+genero.key+'" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
           }
           document.querySelector(".trailers").innerHTML = trailer;
        })
