@@ -109,16 +109,16 @@ var urlRecomendaciones = "https://api.themoviedb.org/3/tv/"+idSerie+"/recommenda
 var sectionRecomendaciones = document.querySelector(".sectionRecomendaciones")
 
 
-//var botonRecomendaciones = document.getElementById("botonRecomendaciones")
-//botonRecomendaciones.onclick = function onclick(){
- //sectionRecomendaciones.style.display = "block";
-//  console.log(sectionRecomendaciones.style.display);
- //console.log(botonRecomendaciones);
-//}
+var botonRecomendaciones = document.getElementById("botonRecomendaciones")
+botonRecomendaciones.onclick = function onclick(){
+ sectionRecomendaciones.style.display = "block";
+ console.log(sectionRecomendaciones.style.display);
+ console.log(botonRecomendaciones);
+}
 
 
-    //  document.querySelector ("#recomendaciones").addEventListener("click", function () {
-    // fetch("https://api.themoviedb.org/3/movie/" + idSerie + "/recommendations?api_key=d6ff71a6bd2a94eaac5b986a9112d505&page=1")
-    // })
+     document.querySelector ("#recomendaciones").addEventListener("click", function () {
+    fetch("https://api.themoviedb.org/3/movie/" + idSerie + "/recommendations?api_key=d6ff71a6bd2a94eaac5b986a9112d505&page=1")
+    })
 })
 })
