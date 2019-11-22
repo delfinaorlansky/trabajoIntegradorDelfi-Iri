@@ -56,6 +56,22 @@ window.addEventListener('load',function(){
  listaResultados.innerHTML += contenidoFinal;
 // })
 // })
+//TRAILER
+var urlTrailers = "https://api.themoviedb.org/3/tv/"+idSerie+"/videos?api_key=81abb78b34be12fc4620b0a001276f5a&language=en-US"
+      fetch (urlTrailers)
+        .then(function(response) {
+          return response.json();
+        })
+        .then(function (resultados) {
+         console.log(resultados);
+       var arrayKeys = resultados.results
+          var trailer = document.querySelector(".contenedor-trailers");
+          for (var i = 0; i < arrayKeys.length; i++) {
+            trailer += '<iframe width="560" height="315" src="https://www.youtube.com/embed/'+genero.key+'" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+          }
+          document.querySelector(".trailers").innerHTML = trailer;
+       })
+
 // RECOMENDACIONES
 var queryStringObj = new URLSearchParams(window.location.search);
 var urlFija = "https://image.tmdb.org/t/p/original/";
@@ -70,21 +86,6 @@ function createItemHtml(clase, titulo, imagen, idSerie) {
 
   return serie;
 }
-//TRAILER
-var urlTrailers = "https://api.themoviedb.org/3/tv/"+idSerie+"/videos?api_key=81abb78b34be12fc4620b0a001276f5a&language=en-US"
-      fetch (urlTrailers)
-        .then(function(response) {
-          return response.json();
-        })
-        .then(function (resultados) {
-          console.log(resultados);
-       var arrayKeys = resultados.results
-          var trailer = document.querySelector(".contenedor-trailers");
-          for (var i = 0; i < arrayKeys.length; i++) {
-            trailer += '<iframe width="560" height="315" src="https://www.youtube.com/embed/'+genero.key+'" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
-          }
-          document.querySelector(".trailers").innerHTML = trailer;
-       })
 
 //RECOMENDACIONES
 var idSerie = queryStringObj.get('idDeSerie');
@@ -94,7 +95,7 @@ var urlRecomendaciones = "https://api.themoviedb.org/3/tv/"+idSerie+"/recommenda
        return response.json();
      })
      .then(function(resultados) {
-       console.log(resultados);
+  //     console.log(resultados);
        var recoContainer = document.querySelector(".reco");
          for (var i = 0; i < resultados.results.length; i++) {
            titulo = resultados.results[i].name
