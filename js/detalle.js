@@ -74,12 +74,14 @@ var urlRecomendaciones = "https://api.themoviedb.org/3/tv/"+idSerie+"/recommenda
 
        })
 
-var sectionReco = document.querySelector(".sectionReco")
-var recoBoton = document.getElementById("recomendacionesBoton")
- recoBoton.onclick = function onclick(){
- sectionReco.style.display = "block";
- console.log(sectionReco.style.display);
- console.log(recoBoton);
+var sectionRecomendaciones = document.querySelector(".sectionRecomendaciones")
+
+
+var botonRecomendaciones = document.getElementById("botonRecomendaciones")
+botonRecomendaciones.onclick = function onclick(){
+ sectionRecomendaciones.style.display = "block";
+  console.log(sectionRecomendaciones.style.display);
+ console.log(botonRecomendaciones);
 }
 
 
