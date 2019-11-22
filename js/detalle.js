@@ -7,7 +7,7 @@ window.addEventListener('load',function(){
 
   console.log(idSerie);
 
-  fetch('https://api.themoviedb.org/3/tv/' + idSerie + '?api_key=ea80e737250396f3fbaef5f707b13894&language=en-US')
+  fetch('https://api.themoviedb.org/3/tv/' + idSerie + '?api_key=60be6317b0012697cb25d6ce427de920&language=en-US')
     .then(function(response){
       return response.json();
     })
@@ -33,6 +33,23 @@ window.addEventListener('load',function(){
        for (var i = 0; i < objetoLiteralSerie.genres.length; i++) {
          contenidoFinal +=    '<p>'+ objetoLiteralSerie.genres[i].name + '</p>';
        }
+
+
+   fetch("https://api.themoviedb.org/3/tv/" + id + "/videos?api_key=60be6317b0012697cb25d6ce427de920&language=en-US")
+     .then(function(respuesta) {
+       return respuesta.json();
+     })
+     .then(function(datos) {
+       console.log(datos);
+       var div_trailer = document.querySelector(".contenedor-trailers");
+       var trailer = datos.results;
+
+       for (var i = 0; i < trailer.length; i++) {
+         div_trailer.innerHTML += '<iframe width="560" height="315" src="https://www.youtube.com/embed/' + datos.results[i].key + '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+
+
+       }
+     })
 
        contenidoFinal += '</div>';
       // 8. Insertamos el contenido final en el HTML del buscador
